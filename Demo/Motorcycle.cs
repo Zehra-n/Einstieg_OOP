@@ -1,25 +1,23 @@
 ﻿namespace Demo;
 
-public class Motorcycle
+class Motorcycle : Vehicle
 {
-    public string Brand { get; }
-    public string Color { get; }
     public int Speed { get; }
-    
+
     public Motorcycle(string brand, string color, int speed)
+        : base(brand, color)
     {
-        this.Brand = brand;
-        this.Color = color;
-        this.Speed = speed;
-    }
-    
-    public void Move()
-    {
-        Console.WriteLine($"Das Motorrad {Brand} , {Color} fährt mit {Speed} km/h.");
+        Speed = speed;
     }
 
-    public void PrintInfo()
+    public override void Move()
     {
-        Console.WriteLine($"Motorrad Info: {Brand} , {Color}, Geschwindigkeit: {Speed} km/h.");
+        Console.WriteLine($"Das Motorrad {Brand}, {Color} fährt mit {Speed} km/h.");
+    }
+
+    public override void PrintInfo()
+    {
+        base.PrintInfo();
+        Console.WriteLine($"Geschwindigkeit: {Speed} km/h");
     }
 }

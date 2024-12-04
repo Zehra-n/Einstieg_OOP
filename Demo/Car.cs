@@ -1,29 +1,28 @@
-﻿using System.Drawing;
+﻿namespace Demo;
 
-namespace Demo;
-
-class Car
+class Car : Vehicle
 {
-    public string Brand { get; }
-    public string Color { get; }
     public int NumberOfDoors { get; }
 
     public Car(string brand, string color, int numberOfDoors)
+        : base(brand, color)
     {
-        this.Brand = brand;
-        this.Color = color;
-        this.NumberOfDoors = numberOfDoors;
+        NumberOfDoors = numberOfDoors;
     }
-    
-   
-    public void Move()
+
+    public override void Move()
     {
         Console.WriteLine($"Das Auto {Brand} {Color} mit {NumberOfDoors} Türen fährt.");
     }
 
-    public void PrintInfo()
+    public override void PrintInfo()
     {
-        Console.WriteLine($"Auto Info: {Brand} {Color}, Türen: {NumberOfDoors}");
+        base.PrintInfo();
+        Console.WriteLine($"Türen: {NumberOfDoors}");
+    }
+
+    public void Honk()
+    {
+        Console.WriteLine("Tuuu Tuuu!");
     }
 }
-

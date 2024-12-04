@@ -4,9 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Car BMW = new Car("BMW", "Black", 4);
-        BMW.PrintInfo();
-        BMW.Move();
+        Car car = new Car("BMW", "Black", 4);
+        car.PrintInfo();
+        car.Move();
+        car.Honk();
         
         Motorcycle motorcycle = new Motorcycle("BMW", "White/Blue/Red", 250);
         motorcycle.PrintInfo();
@@ -16,6 +17,4 @@ class Program
         mountainbike.PrintInfo();
         mountainbike.Move();
     }
-    
-    
 }

@@ -1,25 +1,23 @@
 ﻿namespace Demo;
 
-public class Mountainbike
+class Mountainbike : Vehicle
 {
-    public string Brand { get; }
-    public string Color { get; }
     public int Year { get; }
-    
+
     public Mountainbike(string brand, string color, int year)
+        : base(brand, color)
     {
-        this.Brand = brand;
-        this.Color = color;
-        this.Year = year;
-    }
-    
-    public void Move()
-    {
-        Console.WriteLine($"Der Mountainbike {Brand} , {Color} mit Baujahr {Year}, fährt.");
+        Year = year;
     }
 
-    public void PrintInfo()
+    public override void Move()
     {
-        Console.WriteLine($"Mountainbike Info: {Brand} , {Color}, Baujahr: {Year}.");
+        Console.WriteLine($"Das Mountainbike {Brand}, {Color} mit Baujahr {Year}, fährt.");
+    }
+
+    public override void PrintInfo()
+    {
+        base.PrintInfo();
+        Console.WriteLine($"Baujahr: {Year}");
     }
 }
