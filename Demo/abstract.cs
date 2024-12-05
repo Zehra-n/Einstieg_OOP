@@ -4,6 +4,8 @@ abstract class Abstract
 {
     public string Brand { get; set; }
     public string Color { get; set; }
+    
+    public VehicleCondition Condition { get; set; }
 
     public Abstract(string brand, string color)
     {

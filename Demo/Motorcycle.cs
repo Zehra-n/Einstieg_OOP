@@ -4,8 +4,8 @@ class Motorcycle : Vehicle
 {
     public int Speed { get; }
 
-    public Motorcycle(string brand, string color, int speed)
-        : base(brand, color)
+    public Motorcycle(string brand, string color, int speed, VehicleCondition condition)
+        : base(brand, color, condition)
     {
         Speed = speed;
     }

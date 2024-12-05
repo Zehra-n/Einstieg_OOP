@@ -4,8 +4,8 @@ class Mountainbike : Vehicle
 {
     public int Year { get; }
 
-    public Mountainbike(string brand, string color, int year)
-        : base(brand, color)
+    public Mountainbike(string brand, string color, int year, VehicleCondition condition)
+        : base(brand, color, condition)
     {
         Year = year;
     }

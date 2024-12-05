@@ -2,15 +2,20 @@
 
 class Vehicle : Abstract
 {
-    public Vehicle(string brand, string color) : base(brand, color) { }
+        public Vehicle(string brand, string color, VehicleCondition condition) : base(brand, color)
+    {
+        this.Condition = condition;
+        this.Brand = brand;
+        this.Color = color;
+    }   
 
     public override void Move()
     {
-        Console.WriteLine($"{Brand} {Color} bewegt sich.");
+        Console.WriteLine($"{this.Brand} {this.Color} bewegt sich.");
     }
-
-    public override void PrintInfo()
+    
+    public virtual void PrintInfo()
     {
-        base.PrintInfo();
+        Console.WriteLine($"Marke: {this.Brand} , Farbe:  {this.Color}. Zustand: {this.Condition}.");
     }
 }
